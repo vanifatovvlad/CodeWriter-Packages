@@ -1,0 +1,3 @@
+[submodule "Assets/UniMob"]
+	path = Assets/UniMob
+	url = https://github.com/codewriter-packages/UniMob.git
