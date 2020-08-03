@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/CounterSample/SampleCounter.unity
+    guid: c93e79e3d6391e74cb3aeebc45e5b392
   m_configObjects: {}
