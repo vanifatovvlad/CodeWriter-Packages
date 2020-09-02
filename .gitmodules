@@ -2,3 +2,6 @@
 	path = Packages/UniMob
 	url = https://github.com/codewriter-packages/UniMob.git
 	branch = master
+[submodule "Packages/UniMob.UI"]
+	path = Packages/UniMob.UI
+	url = https://github.com/codewriter-packages/UniMob.UI.git
