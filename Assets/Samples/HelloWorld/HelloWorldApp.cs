@@ -12,16 +12,19 @@ namespace Samples.HelloWorld
 
         protected override Widget Build(BuildContext context)
         {
-            return new Container(
-                backgroundColor: Color.white,
-                size: WidgetSize.Stretched,
-                child: new UniMobText(
+            return new Container
+            {
+                Size = WidgetSize.Stretched,
+                BackgroundColor = Color.white,
+                Child = new UniMobText(
                     value: "Hello World!",
-                    size: WidgetSize.Stretched,
-                    color: Color.blue,
-                    fontSize: 60
+                    size: WidgetSize.Stretched
                 )
-            );
+                {
+                    Color = Color.blue,
+                    FontSize = 60,
+                },
+            };
         }
     }
 }

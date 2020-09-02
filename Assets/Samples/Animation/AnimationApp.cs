@@ -1,3 +1,5 @@
+using System;
+using UniMob;
 using UniMob.UI;
 using UniMob.UI.Widgets;
 using UnityEngine;
@@ -16,8 +18,13 @@ namespace Samples.Animation
         protected override void Initialize()
         {
             _controller = new AnimationController(duration);
-            _controller.AddStatusListener(OnControllerStatusChanged);
             _controller.Forward();
+
+            Atom.Reaction(
+                "Reverse Animation Reaction",
+                () => _controller.Status,
+                OnControllerStatusChanged
+            );
         }
 
         private void OnControllerStatusChanged(AnimationStatus status)
@@ -36,18 +43,21 @@ namespace Samples.Animation
 
         protected override Widget Build(BuildContext context)
         {
-            return new Container(
-                size: WidgetSize.Stretched,
-                backgroundColor: Color.white,
-                child: new CompositeTransition(
-                    opacity: opacity.Animate(_controller),
-                    position: position.Animate(_controller),
-                    child: new Container(
-                        size: WidgetSize.Fixed(300, 200),
-                        backgroundColor: Color.black
-                    )
-                )
-            );
+            return new Container
+            {
+                Size = WidgetSize.Stretched,
+                BackgroundColor = Color.white,
+                Child = new CompositeTransition
+                {
+                    Opacity = opacity.Animate(_controller),
+                    Position = position.Animate(_controller),
+                    Child = new Container
+                    {
+                        BackgroundColor = Color.black,
+                        Size = WidgetSize.Fixed(300, 200),
+                    }
+                }
+            };
         }
     }
 }

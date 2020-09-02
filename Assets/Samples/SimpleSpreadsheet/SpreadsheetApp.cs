@@ -27,28 +27,30 @@ namespace Samples.SimpleSpreadsheet
 
         protected override Widget Build(BuildContext context)
         {
-            return new Container(
-                backgroundColor: Color.white,
-                size: WidgetSize.Stretched,
-                child: BuildContent()
-            );
+            return new Container
+            {
+                BackgroundColor = Color.white,
+                Size = WidgetSize.Stretched,
+                Child = BuildContent(),
+            };
         }
 
         private Widget BuildContent()
         {
-            return new ScrollList(
-                mainAxisAlignment: MainAxisAlignment.Center,
-                crossAxisAlignment: CrossAxisAlignment.Center,
-                children: _spreadsheet.GetAllCellNames().Select(BuildCell).ToList()
-            );
+            return new ScrollList
+            {
+                MainAxisAlignment = MainAxisAlignment.Center,
+                CrossAxisAlignment = CrossAxisAlignment.Center,
+                Children = _spreadsheet.GetAllCellNames().Select(BuildCell).ToList()
+            };
         }
 
         private Widget BuildCell(string cellName)
         {
-            return new SpreadsheetCellWidget(
-                name: cellName,
-                key: Key.Of(cellName)
-            );
+            return new SpreadsheetCellWidget(cellName)
+            {
+                Key = Key.Of(cellName)
+            };
         }
     }
 }

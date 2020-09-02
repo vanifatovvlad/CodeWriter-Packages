@@ -16,24 +16,26 @@ namespace Samples.HelloWorld
 
         protected override Widget Build(BuildContext context)
         {
-            return new Container(
-                backgroundColor: Color.white,
-                size: WidgetSize.Stretched,
-                child: BuildContent()
-            );
+            return new Container
+            {
+                BackgroundColor = Color.white,
+                Size = WidgetSize.Stretched,
+                Child = BuildContent(),
+            };
         }
 
         private Widget BuildContent()
         {
-            return new Column(
-                mainAxisAlignment: MainAxisAlignment.Center,
-                crossAxisAlignment: CrossAxisAlignment.Center,
-                children: new List<Widget>
+            return new Column
+            {
+                MainAxisAlignment = MainAxisAlignment.Center,
+                CrossAxisAlignment = CrossAxisAlignment.Center,
+                Children = new List<Widget>
                 {
                     BuildCounterText(),
                     BuildIncrementButton()
                 }
-            );
+            };
         }
 
         private Widget BuildCounterText()
@@ -44,29 +46,35 @@ namespace Samples.HelloWorld
             {
                 return new UniMobText(
                     value: $"Counter: {_counter.Value}",
-                    fontSize: 40,
-                    size: WidgetSize.Fixed(400, 100),
-                    mainAxisAlignment: MainAxisAlignment.Center,
-                    crossAxisAlignment: CrossAxisAlignment.Center
-                );
+                    size: WidgetSize.Fixed(400, 100)
+                )
+                {
+                    FontSize = 40,
+                    MainAxisAlignment = MainAxisAlignment.Center,
+                    CrossAxisAlignment = CrossAxisAlignment.Center,
+                };
             });
         }
 
         private Widget BuildIncrementButton()
         {
-            return new UniMobButton(
-                child: new Container(
-                    backgroundColor: Color.grey,
-                    child: new UniMobText(
+            return new UniMobButton
+            {
+                OnClick = () => _counter.Value++,
+                Child = new Container
+                {
+                    BackgroundColor = Color.grey,
+                    Child = new UniMobText(
                         value: "Increment",
-                        fontSize: 40,
-                        size: WidgetSize.Fixed(400, 100),
-                        mainAxisAlignment: MainAxisAlignment.Center,
-                        crossAxisAlignment: CrossAxisAlignment.Center
+                        size: WidgetSize.Fixed(400, 100)
                     )
-                ),
-                onClick: () => _counter.Value++
-            );
+                    {
+                        FontSize = 40,
+                        MainAxisAlignment = MainAxisAlignment.Center,
+                        CrossAxisAlignment = CrossAxisAlignment.Center,
+                    }
+                },
+            };
         }
     }
 }

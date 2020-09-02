@@ -6,7 +6,7 @@ namespace Samples.SimpleSpreadsheet.Presentation
 {
     public class SpreadsheetCellWidget : StatefulWidget
     {
-        public SpreadsheetCellWidget(string name, Key key = null) : base(key)
+        public SpreadsheetCellWidget(string name)
         {
             Name = name;
         }
