@@ -11,7 +11,7 @@ namespace Sample
             get { return 1; }
             set { Debug.Log(value); }
         }
-        
+
         [Atom]
         public int Weaved
         {
@@ -39,12 +39,10 @@ namespace Sample
             }
             set
             {
-                if (__Manual != null)
+                if (__Manual == null || __Manual.CompareAndInvalidate(value))
                 {
-                    __Manual.Invalidate();
+                    Debug.Log(value);
                 }
-
-                Debug.Log(value);
             }
         }
     }
