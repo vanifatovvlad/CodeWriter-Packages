@@ -5,3 +5,9 @@
 [submodule "Packages/UniMob.UI"]
 	path = Packages/UniMob.UI
 	url = https://github.com/codewriter-packages/UniMob.UI.git
+[submodule "Packages/Mesh-Animation"]
+	path = Packages/Mesh-Animation
+	url = https://github.com/codewriter-packages/Mesh-Animation.git
+[submodule "Packages/Style-Components"]
+	path = Packages/Style-Components
+	url = https://github.com/codewriter-packages/Style-Components.git

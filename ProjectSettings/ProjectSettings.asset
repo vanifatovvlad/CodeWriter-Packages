@@ -674,7 +674,8 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
   scriptingDefineSymbols:
-    1: UNIMOB_CODEGEN_ENABLED;UNIMOB_CODEGEN_LOGGING_ENABLED
+    1: ODIN_INSPECTOR;UNIMOB_CODEGEN_LOGGING_ENABLED
+    7: ODIN_INSPECTOR;UNIMOB_CODEGEN_LOGGING_ENABLED
   platformArchitecture: {}
   scriptingBackend:
     Android: 1
