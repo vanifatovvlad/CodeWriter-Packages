@@ -11,3 +11,9 @@
 [submodule "Packages/Style-Components"]
 	path = Packages/Style-Components
 	url = https://github.com/codewriter-packages/Style-Components.git
+[submodule "Packages/NpmPublisherSupport"]
+	path = Packages/NpmPublisherSupport
+	url = https://github.com/codewriter-packages/NpmPublisherSupport
+[submodule "Packages/NpmPackageLoader"]
+	path = Packages/NpmPackageLoader
+	url = https://github.com/codewriter-packages/NpmPackageLoader
