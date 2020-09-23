@@ -10,10 +10,6 @@ namespace Samples.HelloWorld
     {
         private MutableAtom<int> _counter = Atom.Value("Counter", 0);
 
-        protected override void Initialize()
-        {
-        }
-
         protected override Widget Build(BuildContext context)
         {
             return new Container

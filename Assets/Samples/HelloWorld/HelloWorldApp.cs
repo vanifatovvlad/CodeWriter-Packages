@@ -6,10 +6,6 @@ namespace Samples.HelloWorld
 {
     public class HelloWorldApp : UniMobUIApp
     {
-        protected override void Initialize()
-        {
-        }
-
         protected override Widget Build(BuildContext context)
         {
             return new Container

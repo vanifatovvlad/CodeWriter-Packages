@@ -8,10 +8,6 @@ namespace NavigatorSample
 {
     public class NavigationApp : UniMobUIApp
     {
-        protected override void Initialize()
-        {
-        }
-
         protected override Widget Build(BuildContext context)
         {
             return new Navigator("main", new Dictionary<string, Func<Route>>
