@@ -8,7 +8,7 @@ namespace Samples.HelloWorld
 {
     public class SimpleCounterApp : UniMobUIApp
     {
-        private MutableAtom<int> _counter = Atom.Value("Counter", 0);
+        [Atom] private int Counter { get; set; } = 0;
 
         protected override Widget Build(BuildContext context)
         {
@@ -41,7 +41,7 @@ namespace Samples.HelloWorld
             return new Builder(context =>
             {
                 return new UniMobText(
-                    value: $"Counter: {_counter.Value}",
+                    value: $"Counter: {Counter}",
                     size: WidgetSize.Fixed(400, 100)
                 )
                 {
@@ -56,7 +56,7 @@ namespace Samples.HelloWorld
         {
             return new UniMobButton
             {
-                OnClick = () => _counter.Value++,
+                OnClick = () => Counter++,
                 Child = new Container
                 {
                     BackgroundColor = Color.grey,
