@@ -1,18 +1,13 @@
 using System;
 using System.Collections.Generic;
+using UniMob.UI;
+using UniMob.UI.Widgets;
 using UnityEngine;
 
-namespace NavigatorSample
+namespace Samples.Navigation
 {
-    using UniMob.UI;
-    using UniMob.UI.Widgets;
-
     public class DetailWidget : StatefulWidget
     {
-        public DetailWidget()
-        {
-        }
-
         public Action Close { get; set; }
 
         public override State CreateState() => new DetailState();

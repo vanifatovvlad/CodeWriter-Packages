@@ -4,7 +4,7 @@ using UniMob.UI;
 using UniMob.UI.Widgets;
 using UnityEngine;
 
-namespace NavigatorSample
+namespace Samples.Navigation
 {
     public class NavigationApp : UniMobUIApp
     {

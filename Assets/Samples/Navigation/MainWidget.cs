@@ -1,17 +1,12 @@
 using System;
+using UniMob.UI;
+using UniMob.UI.Widgets;
 using UnityEngine;
 
-namespace NavigatorSample
+namespace Samples.Navigation
 {
-    using UniMob.UI;
-    using UniMob.UI.Widgets;
-
     public class MainWidget : StatefulWidget
     {
-        public MainWidget()
-        {
-        }
-
         public Action ShowDetail { get; set; }
 
         public override State CreateState() => new MainState();
