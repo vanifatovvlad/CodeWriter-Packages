@@ -13,7 +13,7 @@ namespace Sample
 
         [Atom] private int Counter { get; set; } = 0;
 
-        private IDisposable _render;
+        private Reaction _render;
 
         private void OnEnable()
         {
@@ -24,7 +24,7 @@ namespace Sample
 
         private void OnDisable()
         {
-            _render.Dispose();
+            _render.Deactivate();
 
             incrementButton.onClick.RemoveListener(Increment);
         }
