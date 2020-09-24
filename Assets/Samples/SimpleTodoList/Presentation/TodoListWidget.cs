@@ -22,27 +22,17 @@ namespace Samples.SimpleTodoList.Presentation
             {
                 MainAxisSize = AxisSize.Max,
                 CrossAxisSize = AxisSize.Max,
-
-                Children = Widget.TodoList.Todos
-                    .Select(BuildTodo)
-                    .Append(BuildTaskLeft())
-                    .ToList(),
-            };
-        }
-
-        private Widget BuildTodo(Todo todo)
-        {
-            return new TodoWidget(todo);
-        }
-
-        private Widget BuildTaskLeft()
-        {
-            return new UniMobText(
-                WidgetSize.FixedHeight(60),
-                $"Tasks left: {Widget.TodoList.UnfinishedTodoCount}"
-            )
-            {
-                FontSize = 50,
+                Children =
+                {
+                    Widget.TodoList.Todos.Select(todo => new TodoWidget(todo)),
+                    new UniMobText(
+                        WidgetSize.FixedHeight(60),
+                        $"Tasks left: {Widget.TodoList.UnfinishedTodoCount}"
+                    )
+                    {
+                        FontSize = 50,
+                    },
+                }
             };
         }
     }

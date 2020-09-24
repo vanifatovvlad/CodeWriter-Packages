@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UniMob;
 using UniMob.UI;
 using UniMob.UI.Widgets;
@@ -26,7 +25,7 @@ namespace Samples.HelloWorld
             {
                 MainAxisAlignment = MainAxisAlignment.Center,
                 CrossAxisAlignment = CrossAxisAlignment.Center,
-                Children = new List<Widget>
+                Children =
                 {
                     BuildCounterText(),
                     BuildIncrementButton()

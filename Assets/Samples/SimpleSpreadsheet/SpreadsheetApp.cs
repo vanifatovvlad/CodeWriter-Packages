@@ -41,7 +41,10 @@ namespace Samples.SimpleSpreadsheet
             {
                 MainAxisAlignment = MainAxisAlignment.Center,
                 CrossAxisAlignment = CrossAxisAlignment.Center,
-                Children = _spreadsheet.GetAllCellNames().Select(BuildCell).ToList()
+                Children =
+                {
+                    _spreadsheet.GetAllCellNames().Select(BuildCell)
+                }
             };
         }
 
