@@ -17,7 +17,7 @@ namespace Sample
 
         private void OnEnable()
         {
-            _render = Atom.Reaction("SampleCounter.Render()", Render);
+            _render = Atom.Reaction(Render);
 
             incrementButton.onClick.AddListener(Increment);
         }

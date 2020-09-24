@@ -20,11 +20,7 @@ namespace Samples.Animation
             _controller = new AnimationController(duration);
             _controller.Forward();
 
-            Atom.Reaction(
-                "Reverse Animation Reaction",
-                () => _controller.Status,
-                OnControllerStatusChanged
-            );
+            Atom.Reaction(() => _controller.Status, OnControllerStatusChanged);
         }
 
         private void OnControllerStatusChanged(AnimationStatus status)
