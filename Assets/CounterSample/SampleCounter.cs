@@ -1,42 +1,21 @@
-﻿using System;
-using UniMob;
+﻿using UniMob;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Sample
 {
-    using UnityEngine;
-
     public class SampleCounter : MonoBehaviour
     {
-        [SerializeField] private Text counterText = default;
-        [SerializeField] private Button incrementButton = default;
+        public Text counterText = default;
+        public Button incrementButton = default;
 
-        [Atom] private int Counter { get; set; } = 0;
+        [Atom] private int Counter { get; set; }
 
-        private Reaction _render;
-
-        private void OnEnable()
+        private void Start()
         {
-            _render = Atom.Reaction(Render);
+            incrementButton.onClick.AddListener(() => Counter += 1);
 
-            incrementButton.onClick.AddListener(Increment);
-        }
-
-        private void OnDisable()
-        {
-            _render.Deactivate();
-
-            incrementButton.onClick.RemoveListener(Increment);
-        }
-
-        private void Render()
-        {
-            counterText.text = $"Count: {Counter}";
-        }
-
-        private void Increment()
-        {
-            Counter++;
+            Atom.Reaction(() => counterText.text = "Tap count: " + Counter);
         }
     }
 }
