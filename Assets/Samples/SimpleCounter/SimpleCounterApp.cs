@@ -39,11 +39,9 @@ namespace Samples.HelloWorld
             // to reduce widget tree rebuild count (optionally)
             return new Builder(context =>
             {
-                return new UniMobText(
-                    value: $"Counter: {Counter}",
-                    size: WidgetSize.Fixed(400, 100)
-                )
+                return new UniMobText(WidgetSize.Fixed(400, 100))
                 {
+                    Value = $"Counter: {Counter}",
                     FontSize = 40,
                     MainAxisAlignment = MainAxisAlignment.Center,
                     CrossAxisAlignment = CrossAxisAlignment.Center,
@@ -59,11 +57,9 @@ namespace Samples.HelloWorld
                 Child = new Container
                 {
                     BackgroundColor = Color.grey,
-                    Child = new UniMobText(
-                        value: "Increment",
-                        size: WidgetSize.Fixed(400, 100)
-                    )
+                    Child = new UniMobText(WidgetSize.Fixed(400, 100))
                     {
+                        Value = "Increment",
                         FontSize = 40,
                         MainAxisAlignment = MainAxisAlignment.Center,
                         CrossAxisAlignment = CrossAxisAlignment.Center,

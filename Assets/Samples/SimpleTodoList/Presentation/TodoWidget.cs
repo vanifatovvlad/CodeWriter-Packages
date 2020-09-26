@@ -20,11 +20,9 @@ namespace Samples.SimpleTodoList.Presentation
             return new UniMobButton
             {
                 OnClick = () => Widget.Todo.Finished = !Widget.Todo.Finished,
-                Child = new UniMobText(
-                    size: WidgetSize.FixedHeight(60),
-                    value: $" - {Widget.Todo.Title}: {(Widget.Todo.Finished ? "Finished" : "Active")}"
-                )
+                Child = new UniMobText(WidgetSize.FixedHeight(60))
                 {
+                    Value = $" - {Widget.Todo.Title}: {(Widget.Todo.Finished ? "Finished" : "Active")}",
                     FontSize = 40,
                 }
             };

@@ -37,8 +37,9 @@ namespace Samples.Navigation
                     {
                         OnClick = () => Widget.Close?.Invoke(),
 
-                        Child = new UniMobText(WidgetSize.Fixed(600, 200), "Close Detail")
+                        Child = new UniMobText(WidgetSize.Fixed(600, 200))
                         {
+                            Value = "Close Detail",
                             FontSize = 60,
                             Color = Color.black,
                             MainAxisAlignment = MainAxisAlignment.Center,

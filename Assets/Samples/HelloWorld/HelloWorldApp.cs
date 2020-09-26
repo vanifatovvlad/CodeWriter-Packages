@@ -12,11 +12,9 @@ namespace Samples.HelloWorld
             {
                 Size = WidgetSize.Stretched,
                 BackgroundColor = Color.white,
-                Child = new UniMobText(
-                    value: "Hello World!",
-                    size: WidgetSize.Stretched
-                )
+                Child = new UniMobText(WidgetSize.Stretched)
                 {
+                    Value = "Hello World!",
                     Color = Color.blue,
                     FontSize = 60,
                 },

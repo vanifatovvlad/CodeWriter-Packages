@@ -25,11 +25,9 @@ namespace Samples.SimpleTodoList.Presentation
                 Children =
                 {
                     Widget.TodoList.Todos.Select(todo => new TodoWidget(todo)),
-                    new UniMobText(
-                        WidgetSize.FixedHeight(60),
-                        $"Tasks left: {Widget.TodoList.UnfinishedTodoCount}"
-                    )
+                    new UniMobText(WidgetSize.FixedHeight(60))
                     {
+                        Value = $"Tasks left: {Widget.TodoList.UnfinishedTodoCount}",
                         FontSize = 50,
                     },
                 }

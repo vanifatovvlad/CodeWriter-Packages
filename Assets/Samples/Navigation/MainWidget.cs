@@ -25,8 +25,9 @@ namespace Samples.Navigation
                 {
                     OnClick = () => Widget.ShowDetail?.Invoke(),
 
-                    Child = new UniMobText(WidgetSize.Fixed(600, 200), "Open Detail")
+                    Child = new UniMobText(WidgetSize.Fixed(600, 200))
                     {
+                        Value = "Open Detail",
                         FontSize = 60,
                         Color = Color.black,
                         MainAxisAlignment = MainAxisAlignment.Center,
