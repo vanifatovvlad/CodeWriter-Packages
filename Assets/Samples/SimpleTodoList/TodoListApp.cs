@@ -1,6 +1,4 @@
 using System.Linq;
-using Samples.SimpleTodoList.Domain;
-using Samples.SimpleTodoList.Presentation;
 using UniMob.UI;
 using UniMob.UI.Widgets;
 using UnityEngine;
@@ -26,7 +24,38 @@ namespace Samples.SimpleTodoList
             return new Container
             {
                 BackgroundColor = Color.white,
-                Child = new TodoListWidget(_store),
+                Child = BuildTodoList(_store),
+            };
+        }
+
+        private Widget BuildTodoList(TodoList todoList)
+        {
+            return new Column
+            {
+                MainAxisSize = AxisSize.Max,
+                CrossAxisSize = AxisSize.Max,
+                Children =
+                {
+                    todoList.Todos.Select(todo => BuildTodo(todo)),
+                    new UniMobText(WidgetSize.FixedHeight(60))
+                    {
+                        Value = $"Tasks left: {todoList.UnfinishedTodoCount}",
+                        FontSize = 50,
+                    },
+                }
+            };
+        }
+
+        private Widget BuildTodo(Todo todo)
+        {
+            return new UniMobButton
+            {
+                OnClick = () => todo.Finished = !todo.Finished,
+                Child = new UniMobText(WidgetSize.FixedHeight(60))
+                {
+                    Value = $" - {todo.Title}: {(todo.Finished ? "Finished" : "Active")}",
+                    FontSize = 40,
+                }
             };
         }
     }

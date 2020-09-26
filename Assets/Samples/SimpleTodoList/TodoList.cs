@@ -1,7 +1,7 @@
 using System.Linq;
 using UniMob;
 
-namespace Samples.SimpleTodoList.Domain
+namespace Samples.SimpleTodoList
 {
     public class TodoList
     {

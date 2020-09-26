@@ -1,6 +1,6 @@
 using UniMob;
 
-namespace Samples.SimpleTodoList.Domain
+namespace Samples.SimpleTodoList
 {
     public class Todo
     {
