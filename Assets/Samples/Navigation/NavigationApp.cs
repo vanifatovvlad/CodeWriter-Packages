@@ -19,37 +19,44 @@ namespace Samples.Navigation
 
         private Route BuildMainRoute()
         {
-            return new AnimatedPageRoute(
-                name: "main",
-                duration: 0.2f,
-                builder: (context, tween) => new CompositeTransition
+            return new PageRouteBuilder(
+                new RouteSettings("name", RouteModalType.Fullscreen),
+                transitionDuration: 0.2f,
+                reverseTransitionDuration: 0.2f,
+                pageBuilder: (context, animation, secondaryAnimation) => new MainWidget
                 {
-                    Opacity = tween,
-
-                    Child = new MainWidget
-                    {
-                        ShowDetail = () => Navigator.PushNamed(context, "detail"),
-                    }
-                }
+                    ShowDetail = () => Navigator.PushNamed(context, "detail"),
+                },
+                transitionsBuilder: BuildSlideTransitions
             );
         }
 
         private Route BuildDetailRoute()
         {
-            return new AnimatedPageRoute(
-                name: "detail",
-                duration: 0.2f,
-                builder: (context, tween) => new CompositeTransition
+            return new PageRouteBuilder(
+                new RouteSettings("detail", RouteModalType.Fullscreen),
+                transitionDuration: 0.2f,
+                reverseTransitionDuration: 0.2f,
+                pageBuilder: (context, animation, secondaryAnimation) => new DetailWidget
                 {
-                    Opacity = tween,
-                    Position = tween.Drive(new Vector2Tween(Vector2.left, Vector2.zero)),
-
-                    Child = new DetailWidget
-                    {
-                        Close = () => Navigator.Pop(context),
-                    },
-                }
+                    Close = () => Navigator.Pop(context),
+                },
+                transitionsBuilder: BuildSlideTransitions
             );
+        }
+
+        private Widget BuildSlideTransitions(BuildContext context, AnimationController animation,
+            AnimationController secondaryAnimation, Widget child)
+        {
+            return new CompositeTransition
+            {
+                Position = secondaryAnimation.Drive(new Vector2Tween(Vector2.left, Vector2.zero)),
+                Child = new CompositeTransition
+                {
+                    Position = animation.Drive(new Vector2Tween(Vector2.right, Vector2.zero)),
+                    Child = child,
+                }
+            };
         }
     }
 }
