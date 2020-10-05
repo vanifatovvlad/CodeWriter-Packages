@@ -17,3 +17,6 @@
 [submodule "Packages/NpmPackageLoader"]
 	path = Packages/NpmPackageLoader
 	url = https://github.com/codewriter-packages/NpmPackageLoader
+[submodule "Assets/UniMob.UI Samples"]
+	path = Assets/UniMob.UI Samples
+	url = https://github.com/codewriter-packages/UniMob.UI-Samples.git
