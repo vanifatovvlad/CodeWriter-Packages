@@ -27,7 +27,7 @@ namespace Sample
             {
                 if (__Manual == null)
                 {
-                    __Manual = new ComputedAtom<int>("Sample.WeaverTest::Manual", () => Manual);
+                    __Manual = CodeGenAtom.Create("Sample.WeaverTest::Manual", () => Manual);
                 }
 
                 if (!__Manual.DirectEvaluate())
