@@ -20,3 +20,6 @@
 [submodule "Assets/UniMob.UI Samples"]
 	path = Assets/UniMob.UI Samples
 	url = https://github.com/codewriter-packages/UniMob.UI-Samples.git
+[submodule "Packages/Package-Symlinker"]
+	path = Packages/Package-Symlinker
+	url = ../../codewriter-packages/Package-Symlinker.git
