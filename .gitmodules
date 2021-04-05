@@ -23,3 +23,6 @@
 [submodule "Packages/Package-Symlinker"]
 	path = Packages/Package-Symlinker
 	url = ../../codewriter-packages/Package-Symlinker.git
+[submodule "Packages/View-Binding"]
+	path = Packages/View-Binding
+	url = https://github.com/codewriter-packages/View-Binding.git
