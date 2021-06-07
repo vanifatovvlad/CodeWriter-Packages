@@ -227,7 +227,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5133333
+  m_Value: 0.26436722
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -255,7 +255,7 @@ MonoBehaviour:
   result:
     context: {fileID: 350144205}
     name: Health Ratio
-    value: 0.5133333
+    value: 0.26436722
 --- !u!1 &633986517
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +644,7 @@ GameObject:
   - component: {fileID: 1132700947}
   - component: {fileID: 1132700950}
   - component: {fileID: 1132700949}
+  - component: {fileID: 1132700951}
   - component: {fileID: 1132700948}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -683,15 +684,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8147415125d48b8a4929685ee9db025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  context: {fileID: 1580406897}
   target: {fileID: 1132700949}
   styleNames:
   - One
   - Two
   styleValues:
-  - One Text <test>
+  - One Text <test> <Health>/<Max Health> / <Health Ratio>
   - Two Text
   asset: {fileID: 0}
+  context: {fileID: 1580406897}
+  extraContexts:
+  - {fileID: 1132700951}
 --- !u!114 &1132700949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -712,7 +715,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: One Text 100
+  m_text: One Text 100 52,12/197,15 / 0,2643672
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -789,6 +792,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132700946}
   m_CullTransparentMesh: 0
+--- !u!114 &1132700951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132700946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda89e46fc214aeaafce8ed2c72273be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numerator:
+    context: {fileID: 1580406897}
+    name: Health
+    value: 0
+  denominator:
+    context: {fileID: 1580406897}
+    name: Max Health
+    value: 0
+  resultName: Health Ratio
+  result:
+    context: {fileID: 1132700951}
+    name: Health Ratio
+    value: 0.26436722
 --- !u!1 &1324594893
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +1013,7 @@ MonoBehaviour:
     value: 0
   volume:
     context: {fileID: 1580406897}
-    name: Volume
+    name: Health
     value: 0
   str:
     context: {fileID: 1580406897}
@@ -1064,13 +1092,13 @@ MonoBehaviour:
       data:
         context: {fileID: 1580406897}
         name: Health
-        value: 6.16
+        value: 52.12
     00000008:
       type: {class: ViewVariableFloat, ns: CodeWriter.ViewBinding, asm: CodeWriter.ViewBinding}
       data:
         context: {fileID: 1580406897}
         name: Max Health
-        value: 12
+        value: 197.15
     00000009:
       type: {class: ViewVariableInt, ns: CodeWriter.ViewBinding, asm: CodeWriter.ViewBinding}
       data:
@@ -1196,7 +1224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e934e5bfdbbd4d2dba04c447c5241904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  context: {fileID: 0}
   children:
   - {fileID: 1132700948}
   data:
